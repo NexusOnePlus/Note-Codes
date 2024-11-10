@@ -8,7 +8,7 @@ function App() {
       <div className="flex p-9 bg-fixed gap-11 flex-col place-items-center bg-gradient-to-t from-blue-950 to-black text-white
       h-full lg:min-h-screen min-w-full overflow-hidden">
         <div className="grid place-items-center py-6">
-          <img src="./icon.svg" height={"200px"} width={"200px"} />
+          <img src="/icon.svg" height={"200px"} width={"200px"} />
         </div>
         <div>
           <h1 className="text-[50px] font-extrabold lg:text-[80px]">
