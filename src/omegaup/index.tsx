@@ -5,6 +5,7 @@ const Hk = () => {
   const [hacks, setHacks] = useState([]);
 
   useEffect(() => {
+    console.log(import.meta.env.VITE_API_URL);
     fetch(`${import.meta.env.VITE_API_URL}codes/omegaup`)
       .then(async (res) => await res.json())
       .then((json) => setHacks(json));
