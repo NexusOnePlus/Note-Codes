@@ -5,8 +5,8 @@ const Hk = () => {
   const [hacks, setHacks] = useState([]);
 
   useEffect(() => {
-    console.log(import.meta.env.VITE_API_URL);
-    fetch(`$https://nexus-api-note-co-78.deno.dev/codes/omegaup`)
+    // console.log(import.meta.env.VITE_API_URL);
+    fetch(`https://nexus-api-note-co-78.deno.dev/codes/omegaup`)
       .then(async (res) => await res.json())
       .then((json) => setHacks(json));
   
