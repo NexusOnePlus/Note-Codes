@@ -8,7 +8,7 @@ const Op = () => {
     const [hacks, setHacks] = useState({});
 
     useEffect(() => {
-        fetch(`${import.meta.env.VITE_API_URL}codes/omegaup/${id}`)
+        fetch(`https://nexus-api-note-co-78.deno.dev/codes/omegaup/${id}`)
             .then(async (res) => await res.json())
             .then(([json]) => setHacks(json));
 

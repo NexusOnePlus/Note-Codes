@@ -6,7 +6,7 @@ const Hk = () => {
 
   useEffect(() => {
     console.log(import.meta.env.VITE_API_URL);
-    fetch(`${import.meta.env.VITE_API_URL}codes/omegaup`)
+    fetch(`$https://nexus-api-note-co-78.deno.dev/codes/omegaup`)
       .then(async (res) => await res.json())
       .then((json) => setHacks(json));
   

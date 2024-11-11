@@ -11,7 +11,7 @@ const input = () => {
     });
     const send = () => {
         // console.log(dato);
-        fetch(`${import.meta.env.VITE_API_URL}code/${pt}`, {
+        fetch(`https://nexus-api-note-co-78.deno.dev/code/${pt}`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
