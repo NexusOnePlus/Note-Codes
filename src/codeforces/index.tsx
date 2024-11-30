@@ -34,7 +34,7 @@ const Hk = () => {
                 className="bg-red-900/20  border-4 border-red-300 h-[100px]  w-[250px] lg:h-[150px] p-5 content-center rounded-2xl text-[20px] lg:text-[30px] font-bold"
               >
                 <h1 className="text-[20px]">{hack.name}</h1>
-                <p className="text-[15px] text-gray-400 overflow-scroll">{hack.description} </p>
+                <p className="text-[15px] text-gray-400 overflow-hidden h-1/2 "> | {hack.description} </p>
               </div>
             </Link>
           );
