@@ -5,6 +5,11 @@
     "preview": "deno run -A --node-modules-dir npm:vite preview",
     "serve": "deno run --allow-net --allow-read jsr:@std/http@1/file-server dist/"
   },
+  "permissions": {
+    "net": true,
+    "read": true,
+    "write": true
+  },
   "compilerOptions": {
     "lib": ["ES2020", "DOM", "DOM.Iterable", "deno.ns"],
     "jsx": "react-jsx",
@@ -23,6 +28,15 @@
     "react-router-dom": "npm:react-router-dom@^6.28.0",
     "react-syntax-highlighter": "npm:react-syntax-highlighter@^15.6.1",
     "tailwindcss": "npm:tailwindcss@^3.4.14",
-    "vite": "npm:vite@^5.4.9"
+    "vite": "npm:vite@^5.4.9",
+    "@uiw/react-codemirror": "npm:@uiw/react-codemirror@latest",
+    "@codemirror/lang-javascript": "npm:@codemirror/lang-javascript@latest",
+    "@codemirror/lang-python": "npm:@codemirror/lang-python@latest",
+    "@codemirror/lang-cpp": "npm:@codemirror/lang-cpp@latest",
+    "@codemirror/lang-java": "npm:@codemirror/lang-java@latest",
+    "@codemirror/lang-rust": "npm:@codemirror/lang-rust@latest",
+    "@codemirror/lang-go": "npm:@codemirror/lang-go@latest",
+    "@codemirror/lang-sql": "npm:@codemirror/lang-sql@latest",
+    "@uiw/codemirror-theme-github": "npm:@uiw/codemirror-theme-github@latest"
   }
 }
