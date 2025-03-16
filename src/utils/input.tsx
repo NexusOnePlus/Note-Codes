@@ -1,7 +1,30 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
+import CodeMirror from "@uiw/react-codemirror";
+import { javascript } from "@codemirror/lang-javascript";
+import { python } from "@codemirror/lang-python";
+import { cpp } from "@codemirror/lang-cpp";
+import { java } from "@codemirror/lang-java";
+import { rust } from "@codemirror/lang-rust";
+import { go } from "@codemirror/lang-go";
+import { sql } from "@codemirror/lang-sql";
+import { githubLight } from "@uiw/codemirror-theme-github";
+import { CodeEditor } from "./CodeEditor.tsx";
+
+
+const languages = {
+    javascript: javascript(),
+    python: python(),
+    cpp: cpp(),
+    java: java(),
+    rust: rust(),
+    go: go(),
+    sql: sql(),
+};
 
 const input = () => {
+    const [language, setLanguage] = useState<keyof typeof languages>("python");
+
     const { pt } = useParams();
     const [dato, setDato] = useState({
         name: '',
@@ -32,6 +55,7 @@ const input = () => {
     useEffect(() => {
     }, [dato]);
     return (
+
         <div className="bg-neutral-950 gap-6 text-white p-10  min-h-screen">
             <div>
                 <h1 className="text-[50px] font-extrabold lg:text-[50px] text-center">
@@ -84,16 +108,11 @@ const input = () => {
                     />
                 </div>
                 <div className="grid bg-green-900/20  border-4 border-teal-500 h-full gap-2  lg:gap-2 w-full lg:h-full p-5 rounded-2xl font-bold">
-                    <h1 className="text-[20px] font-bold lg:text-[20px]">
-                        Codigo
-                    </h1>
-                    <textarea
-                        maxLength={20000}
-                        rows={20}
-                        value={dato.solution}
-                        onChange={(e) =>
-                            setDato({ ...dato, solution: e.target.value })}
-                        className="text-[15px] focus:outline-none p-3 border-2 rounded-lg  bg-transparent"
+                    <CodeEditor
+                        language={language}
+                        code={dato.solution}
+                        onLanguageChange={(lang) => setLanguage(lang)}
+                        onCodeChange={(code) => setDato({ ...dato, solution: code })} 
                     />
                 </div>
                 <Link onClick={() => send()} to="/">
