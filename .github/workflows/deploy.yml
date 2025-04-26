@@ -2,16 +2,25 @@ name: Deploy
 on:
   push:
     branches: ["main"]
+    
     paths:
-      - 'src/**'
-      - 'database/**'
-      - 'public/**'
+      - 'src/**'          
+      - 'deno.json'       
+      - 'vite.config.ts'   
+      - 'postcss.config.js' 
+      - 'public/**'       
+      - 'index.html'      
+      - '.github/workflows/deploy.yml' 
   pull_request:
     branches: ["main"]
-    paths: 
-      - 'src/**'
-      - 'database/**'
-      - 'public/**'
+    paths:
+      - 'src/**'          
+      - 'deno.json'       
+      - 'vite.config.ts'   
+      - 'postcss.config.js' 
+      - 'public/**'       
+      - 'index.html'      
+      - '.github/workflows/deploy.yml'
 
 jobs:
   deploy:
